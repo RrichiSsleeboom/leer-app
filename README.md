@@ -1,9 +1,9 @@
-# Leer-app
+# Stamply
 
 Een studie-app voor gymnasiumleerlingen, in de stijl van Somtoday. Houd al je vakken bij op één plek:
 
-- **Theorie** — schrijf samenvattingen per onderwerp in Markdown
-- **Stampen** — flashcards met spaced repetition (Leitner-systeem)
+- **Theorie** — schrijf samenvattingen per onderwerp in Markdown, of laat AI een foto van je schrift samenvatten
+- **Stampen** — flashcards met spaced repetition (Leitner-systeem), zelf gemaakt of door AI gegenereerd uit een onderwerp
 - **Toetsen** — maak oefentoetsen met meerkeuze- en open vragen
 - **Planner** — huiswerk en taken bijhouden, met een voortgangsdashboard per vak
 

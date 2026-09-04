@@ -9,8 +9,8 @@ export function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.brand}>
-        <span className={styles.brandMark}>L</span>
-        <span>Leer-app</span>
+        <span className={styles.brandMark}>S</span>
+        <span>Stamply</span>
       </div>
 
       <nav className={styles.nav}>
