@@ -67,6 +67,8 @@ function loadInitialState(): AppState {
 }
 
 interface AppDataContextValue extends AppState {
+  apiKey: string | null;
+  setApiKey: (key: string | null) => void;
   subjectActions: {
     add: (input: { name: string; color: string; icon: string }) => Subject;
     update: (id: string, patch: Partial<Pick<Subject, "name" | "color" | "icon">>) => void;
@@ -117,10 +119,16 @@ export const AppDataContext = createContext<AppDataContextValue | null>(null);
 
 export function AppDataProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<AppState>(loadInitialState);
+  const [apiKey, setApiKeyState] = useState<string | null>(() => getItem<string | null>("apiKey", null));
 
   const persist = useCallback(<K extends keyof AppState>(key: K, value: AppState[K]) => {
     setItem(key, value);
     setState((prev) => ({ ...prev, [key]: value }));
+  }, []);
+
+  const setApiKey = useCallback((key: string | null) => {
+    setItem("apiKey", key);
+    setApiKeyState(key);
   }, []);
 
   const subjectActions = useMemo(
@@ -398,6 +406,8 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
 
   const value: AppDataContextValue = {
     ...state,
+    apiKey,
+    setApiKey,
     subjectActions,
     topicActions,
     summaryActions,

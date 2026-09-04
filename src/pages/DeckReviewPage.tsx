@@ -8,6 +8,7 @@ import { Badge } from "../components/ui/Badge";
 import { EmptyState } from "../components/ui/EmptyState";
 import { FlashcardForm } from "../components/flashcards/FlashcardForm";
 import { FlashcardReview } from "../components/flashcards/FlashcardReview";
+import { AiGenerateForm } from "../components/flashcards/AiGenerateForm";
 import { useAppData } from "../store/useAppData";
 import { getDueCards } from "../lib/srs";
 import styles from "./DeckReviewPage.module.css";
@@ -52,8 +53,10 @@ export function DeckReviewPage() {
           </Button>
         </Card>
 
+        <AiGenerateForm subjectName={subject.name} deckId={deck.id} defaultTopic={deck.name} />
+
         <Card>
-          <h3 style={{ marginBottom: "var(--space-4)" }}>Nieuwe kaart</h3>
+          <h3 style={{ marginBottom: "var(--space-4)" }}>Kaart handmatig toevoegen</h3>
           <FlashcardForm onSubmit={(front, back) => flashcardActions.add(deck.id, front, back)} />
         </Card>
 

@@ -7,6 +7,7 @@ import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { Tabs } from "../components/ui/Tabs";
 import { EmptyState } from "../components/ui/EmptyState";
+import { PhotoSummaryTool } from "../components/theory/PhotoSummaryTool";
 import { useAppData } from "../store/useAppData";
 import { getDueCards } from "../lib/srs";
 import styles from "./SubjectDetailPage.module.css";
@@ -64,6 +65,8 @@ export function SubjectDetailPage() {
           />
           <Button type="submit">+ Toevoegen</Button>
         </form>
+
+        {tab === "theorie" && <PhotoSummaryTool subjectId={subject.id} subjectName={subject.name} />}
 
         {tab === "theorie" &&
           (subjectTopics.length === 0 ? (

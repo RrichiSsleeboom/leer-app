@@ -10,6 +10,7 @@ import { QuizTakePage } from "./pages/QuizTakePage";
 import { QuizResultPage } from "./pages/QuizResultPage";
 import { PlannerPage } from "./pages/PlannerPage";
 import { SubjectManagePage } from "./pages/SubjectManagePage";
+import { SettingsPage } from "./pages/SettingsPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 element={<QuizResultPage />}
               />
               <Route path="/beheer/vakken" element={<SubjectManagePage />} />
+              <Route path="/instellingen" element={<SettingsPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>

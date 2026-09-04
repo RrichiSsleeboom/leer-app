@@ -39,9 +39,14 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <NavLink to="/beheer/vakken" className={styles.manageLink}>
-        ⚙️ Vakken beheren
-      </NavLink>
+      <div className={styles.footerLinks}>
+        <NavLink to="/beheer/vakken" className={styles.manageLink}>
+          ⚙️ Vakken beheren
+        </NavLink>
+        <NavLink to="/instellingen" className={styles.manageLink}>
+          🤖 Instellingen
+        </NavLink>
+      </div>
     </aside>
   );
 }
