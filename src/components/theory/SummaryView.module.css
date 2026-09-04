@@ -1,0 +1,29 @@
+.content {
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.content p {
+  margin-bottom: var(--space-3);
+}
+
+.content ul,
+.content ol {
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-5);
+  list-style: revert;
+}
+
+.content code {
+  background: var(--color-bg);
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-size: 13px;
+}

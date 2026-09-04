@@ -1,0 +1,48 @@
+.scoreCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.scoreValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.scoreLabel {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.prompt {
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.mcqAnswer,
+.openAnswer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.sample {
+  font-style: italic;
+}
+
+.markRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
