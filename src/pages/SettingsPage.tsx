@@ -4,6 +4,7 @@ import { PageContainer } from "../components/layout/PageContainer";
 import { Card } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
 import { useAppData } from "../store/useAppData";
+import { clearAll } from "../lib/storage";
 import formStyles from "../components/ui/Form.module.css";
 import styles from "./SettingsPage.module.css";
 
@@ -17,6 +18,15 @@ export function SettingsPage() {
     setApiKey(value.trim() || null);
     setSavedNote(true);
     setTimeout(() => setSavedNote(false), 2000);
+  }
+
+  function handleReset() {
+    const confirmed = confirm(
+      "Weet je zeker dat je alles wilt wissen? Al je vakken, samenvattingen, flashcards, toetsen en taken worden verwijderd en de standaardvakken worden opnieuw ingesteld. Dit kan niet ongedaan worden gemaakt.",
+    );
+    if (!confirmed) return;
+    clearAll();
+    window.location.reload();
   }
 
   return (
@@ -59,6 +69,18 @@ export function SettingsPage() {
               {savedNote && <span className={styles.savedNote}>Opgeslagen ✓</span>}
             </div>
           </form>
+        </Card>
+
+        <Card>
+          <h3 style={{ marginBottom: "var(--space-3)" }}>Gegevens</h3>
+          <p className={styles.explainer}>
+            Alles wat je in Stamply invult staat alleen lokaal in deze browser. Wil je helemaal opnieuw
+            beginnen (bijvoorbeeld om de standaardvakken te vernieuwen)? Dan wis je hieronder alles en begin
+            je weer met een lege app en de standaardvakken.
+          </p>
+          <Button variant="danger" onClick={handleReset}>
+            Alles wissen en opnieuw beginnen
+          </Button>
         </Card>
       </PageContainer>
     </>
